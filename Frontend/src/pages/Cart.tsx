@@ -16,7 +16,7 @@ const Cart = () => {
   const navigate = useNavigate();
   const [isCheckingOut, setIsCheckingOut] = useState(false);
 
-  const formatPrice = (price: number) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(price);
+  const formatPrice = (price: number) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'RWF' }).format(price);
 
   const handleProceedToCheckout = () => {
     if (!user) {
