@@ -16,7 +16,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
-      currency: 'USD',
+      currency: 'RWF',
     }).format(price);
   };
 
@@ -40,14 +40,17 @@ export const ProductCard = ({ product }: ProductCardProps) => {
       </div>
       <CardContent className="p-4">
         <div className="mb-2">
+          <h3 className="font-semibold text-foreground text-lg mb-1">{product.business.name}</h3>
           {product.business && (
-            <p className="text-xs text-muted-foreground mb-1">{product.business.name}</p>
-          )}
-          <h3 className="font-semibold text-foreground line-clamp-1">{product.name}</h3>
-          {product.description && (
-            <p className="text-sm text-muted-foreground line-clamp-2 mt-1">
-              {product.description}
+            <p className="text-sm text-muted-foreground line-clamp-2 mb-2">
+              {product.name}
             </p>
+          )}
+          {product.description && (
+            <div className="flex items-center gap-1 text-xs text-muted-foreground">
+              {/* <MapPin className="w-3 h-3" /> */}
+              <span className="line-clamp-1">{product.description}</span>
+            </div>
           )}
         </div>
         <div className="flex items-center justify-between mt-3">
